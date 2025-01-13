@@ -11,6 +11,10 @@ public partial class App : Application
 		InitializeComponent();
 
 		this.appShell = appShell;
+
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+		Application.Current.UserAppTheme = AppTheme.Dark;
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
 	}
 
 	protected override Window CreateWindow(IActivationState? activationState) => new(appShell);
